@@ -1,4 +1,4 @@
-# nginx
+# minecraft-web-nginx
 
 `docker-compose.yml`
 ```yml
@@ -8,7 +8,10 @@ services:
 
   nginx:
     container_name: nginx
-    image: ghcr.io/takagi-minecraft-lab/nginx
+    image: minecraft-web-nginx
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
       - 80:80
       - 443:443
